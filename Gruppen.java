@@ -10,14 +10,17 @@ public class Gruppen
     // Instanzvariablen - ersetzen Sie das folgende Beispiel mit Ihren Variablen
     private ArrayList<Team>mannschaften;
     private String name;
+    private ArrayList<Team>ergebnisse;
 
     /**
      * Konstruktor für Objekte der Klasse Gruppen
      */
     public Gruppen()
     {
-        
+       mannschaften=new ArrayList<Team>(); 
     }
 
+    
+    
    
 }
