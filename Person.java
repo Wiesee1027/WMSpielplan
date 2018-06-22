@@ -8,26 +8,26 @@
 public class Person
 {
     // Instanzvariablen - ersetzen Sie das folgende Beispiel mit Ihren Variablen
-    private int x;
+    private int alter;
+    private String name;
 
     /**
      * Konstruktor für Objekte der Klasse Person
      */
     public Person()
     {
-        // Instanzvariable initialisieren
-        x = 0;
+        
+    }
+    
+    public String gibName()
+    {
+     return name;
+     
+    }
+    public int gibAlter()
+    {
+     return alter;   
     }
 
-    /**
-     * Ein Beispiel einer Methode - ersetzen Sie diesen Kommentar mit Ihrem eigenen
-     * 
-     * @param  y    ein Beispielparameter für eine Methode
-     * @return        die Summe aus x und y
-     */
-    public int beispielMethode(int y)
-    {
-        // tragen Sie hier den Code ein
-        return x + y;
-    }
+    
 }

@@ -9,15 +9,15 @@ public class Spieler extends Person
 
 {
     // Instanzvariablen - ersetzen Sie das folgende Beispiel mit Ihren Variablen
-    private int x;
+    private int nummer;
+    private String position;
 
     /**
      * Konstruktor für Objekte der Klasse Spieler
      */
     public Spieler()
     {
-        // Instanzvariable initialisieren
-        x = 0;
+        
     }
 
     /**
@@ -26,9 +26,14 @@ public class Spieler extends Person
      * @param  y    ein Beispielparameter für eine Methode
      * @return        die Summe aus x und y
      */
-    public int beispielMethode(int y)
+    public int gibNummer()
     {
-        // tragen Sie hier den Code ein
-        return x + y;
+       
+        return nummer;
+    }
+    
+    public String gibPostion()
+    {
+       return position; 
     }
 }

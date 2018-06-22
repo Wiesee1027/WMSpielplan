@@ -1,4 +1,4 @@
-
+import java.util.*;
 /**
  * Beschreiben Sie hier die Klasse WM.
  * 
@@ -8,26 +8,16 @@
 public class WM
 {
     // Instanzvariablen - ersetzen Sie das folgende Beispiel mit Ihren Variablen
-    private int x;
+    private  ArrayList<Gruppen>gruppen;
+    
 
     /**
      * Konstruktor für Objekte der Klasse WM
      */
     public WM()
     {
-        // Instanzvariable initialisieren
-        x = 0;
+       
     }
 
-    /**
-     * Ein Beispiel einer Methode - ersetzen Sie diesen Kommentar mit Ihrem eigenen
-     * 
-     * @param  y    ein Beispielparameter für eine Methode
-     * @return        die Summe aus x und y
-     */
-    public int beispielMethode(int y)
-    {
-        // tragen Sie hier den Code ein
-        return x + y;
-    }
+    
 }
