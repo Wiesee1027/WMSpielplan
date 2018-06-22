@@ -2,8 +2,8 @@
 /**
  * Beschreiben Sie hier die Klasse Spieler.
  * 
- * @author (Ihr Name) 
- * @version (eine Versionsnummer oder ein Datum)
+ * @author (Alex Wiese, Stepahn Strecker) 
+ * @version (1.0 - 22.06.2018)
  */
 public class Spieler extends Person
 
@@ -28,7 +28,6 @@ public class Spieler extends Person
      */
     public int gibNummer()
     {
-       
         return nummer;
     }
     

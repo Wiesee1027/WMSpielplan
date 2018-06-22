@@ -2,14 +2,14 @@ import java.util.*;
 /**
  * Beschreiben Sie hier die Klasse Teams.
  * 
- * @author (Ihr Name) 
- * @version (eine Versionsnummer oder ein Datum)
+ * @author (Alex Wiese, Stepahn Strecker) 
+ * @version (1.0 - 22.06.2018)
  */
 public class Team
 {
     // Instanzvariablen - ersetzen Sie das folgende Beispiel mit Ihren Variablen
     private String name;
-    private ArrayList<Spieler>spieler;
+    private ArrayList<Spieler> spieler;
     private Person trainer;
     private int tore;
     private int gegentore;
@@ -31,7 +31,7 @@ public class Team
     
     public Person gibTrainer()
     {
-     return trainer;   
+        return trainer;   
     }
     
     public Spieler gibSpieler(String position)

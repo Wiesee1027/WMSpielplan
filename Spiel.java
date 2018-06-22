@@ -21,11 +21,10 @@ public class Spiel
 
    public Team gibGewinner(int heimer, int auser)
    {
-       if(heimer<auser)
-       {
+     if(heimer < auser)
+     {
          return  heim;
-        }
-       
+     }
      return aus;  
     }
 }

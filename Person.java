@@ -2,8 +2,8 @@
 /**
  * Beschreiben Sie hier die Klasse Person.
  * 
- * @author (Ihr Name) 
- * @version (eine Versionsnummer oder ein Datum)
+ * @author (Alex Wiese, Stepahn Strecker) 
+ * @version (1.0 - 22.06.2018)
  */
 public class Person
 {
@@ -21,12 +21,11 @@ public class Person
     
     public String gibName()
     {
-     return name;
-     
+        return name;
     }
     public int gibAlter()
     {
-     return alter;   
+        return alter;   
     }
 
     
