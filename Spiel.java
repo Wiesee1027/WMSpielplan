@@ -19,12 +19,13 @@ public class Spiel
         
     }
 
-    public Team gibWinTeam(){
-        
-        return null;
-    }
-    
-    public Team gibLoseTeam(){
-        return null;
+   public Team gibGewinner(int heimer, int auser)
+   {
+       if(heimer<auser)
+       {
+         return  heim;
+        }
+       
+     return aus;  
     }
 }
