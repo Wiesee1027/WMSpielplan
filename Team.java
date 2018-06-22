@@ -24,12 +24,13 @@ public class Team
         return name;
     }
     
-    public int gibanzahlSpieler(){
+    public int gibAnzahlSpieler(){
         return anzahlSpieler;
     }
     
     public int spielerVerletzt(){
         int anzahl = 0;
-        return gibanzahlSpieler() + anzahl;
+        return anzahl;
+        //return gibanzahlSpieler() + anzahl;
     }
 }
