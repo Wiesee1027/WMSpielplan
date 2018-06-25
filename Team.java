@@ -19,9 +19,9 @@ public class Team
     /**
      * Konstruktor für Objekte der Klasse Teams
      */
-    public Team(String name, int anzahlSpieler)
+    public Team()
     {
-        this.name = name;
+       
     }
 
     public String gibName()

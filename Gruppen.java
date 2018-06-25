@@ -17,10 +17,34 @@ public class Gruppen
      */
     public Gruppen()
     {
-       mannschaften = new ArrayList<Team>(); 
+        mannschaften = new ArrayList<Team>(); 
     }
 
+    public void ordneNachPunkten()
+    {
+        for(Team teams:mannschaften)
+        {
+            
+        }
+    }
+
+    public void gibplatzeins()
+    {
+
+    }
+
+    public void gibtplatz2()
+    {
+      
+    }
     
+    public int gibSize()
+    {
+     return mannschaften.size();   
+    }
     
-   
+    public void hinzu(Team team)
+    {
+        mannschaften.add(team);
+    }
 }
