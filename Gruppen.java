@@ -11,6 +11,7 @@ public class Gruppen
     private ArrayList<Team> mannschaften;
     private String name;
     private ArrayList<Team> ergebnisse;
+    private ArrayList<Integer>punkteliste;
 
     /**
      * Konstruktor für Objekte der Klasse Gruppen
@@ -18,33 +19,30 @@ public class Gruppen
     public Gruppen()
     {
         mannschaften = new ArrayList<Team>(); 
-        
+        punkteliste=new ArrayList<Integer>();
+    }
+       public void ordne()
+    {
+        Collections.sort(punkteliste);   
     }
 
     public void ordneNachPunkten()
     {
-        ergebnisse = new ArrayList<Team>();
-        Iterator<Team> it = mannschaften.iterator(); 
-        int x = 0;
-        int y = 0;
-        while(it.hasNext())
+        ergebnisse= new ArrayList<Team>();
+        ordne();
+        int i=4;
+        for(Team team:mannschaften)
         {
-            Team team = it.next();
-            Team letzter = null;
-            if(team.gibPunkte()==0)
-            {
-                letzter=team;
+           for(int in :punkteliste)
+           {
+               if(team.gibPunkte()==in)
+               {
+                   ergebnisse.add(team);
+                  
+                }
             }
-            if(team.gibPunkte()<x)
-            {
-                x=team.gibPunkte();
-            }
-            y++;
-            ergebnisse.add(mannschaften.get(y));
-            it.remove();
-            y=0;
-            ergebnisse.add(team);
         }
+      
     }
 
     public void gibplatzeins()
@@ -65,5 +63,6 @@ public class Gruppen
     public void hinzu(Team team)
     {
         mannschaften.add(team);
+        punkteliste.add(team.gibPunkte());
     }
 }

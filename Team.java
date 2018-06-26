@@ -14,43 +14,46 @@ public class Team
     private int tore;
     private int gegentore;
     private int punkte;
-    
+    private ArrayList<Integer>punkteliste;
 
     /**
      * Konstruktor für Objekte der Klasse Teams
      */
     public Team(String name,int punkte)
     {
-       this.name=name;
-       this.punkte=punkte;
+        this.name=name;
+        this.punkte=punkte;
+
     }
+
+ 
+    
 
     public String gibName()
     {
         return name;
     }
-    
+
     public Person gibTrainer()
     {
         return trainer;   
     }
-    
+
     public Spieler gibSpieler(String position)
     {
         for(Spieler s:spieler)
         {
             if(s.gibPostion().equals(position))
             {
-             return s;   
+                return s;   
             }
         }
         return null;
     }
-    
+
     public int gibPunkte()
     {
-       return punkte; 
+        return punkte; 
     }
-    
-    
+
 }
