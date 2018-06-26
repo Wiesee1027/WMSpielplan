@@ -19,9 +19,10 @@ public class Team
     /**
      * Konstruktor für Objekte der Klasse Teams
      */
-    public Team()
+    public Team(String name,int punkte)
     {
-       
+       this.name=name;
+       this.punkte=punkte;
     }
 
     public String gibName()

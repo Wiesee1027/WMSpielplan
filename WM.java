@@ -27,18 +27,17 @@ public class WM
 
     public void achtelAuslosen()
     {
-
     }
 
-    public void probe()
-    {
-        int x = 32;
-        while(x!=0)
-        {
-            teams.add(new Team());
-            x--;
-        }
-    }
+    // public void probe()
+    // {
+        // int x = 32;
+        // while(x!=0)
+        // {
+            // teams.add(new Team());
+            // x--;
+        // }
+    // }
 
     public void gruppenErstellen()
     {
