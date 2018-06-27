@@ -25,9 +25,17 @@ public class Gruppen
        public void ordne()
     {
         Collections.sort(mannschaften, new Ordnepunkt());   
-    }   
-      
-    
+    }        
+    public void ordneNachPunkten()
+    {
+       int x = 0;
+       Iterator it = mannschaften.iterator();
+       
+       while(it.hasNext())
+       {
+           
+        }
+    }
 
     public Team gibplatzeins()
     {
