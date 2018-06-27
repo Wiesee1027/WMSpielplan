@@ -26,23 +26,19 @@ public class Gruppen
         Collections.sort(punkteliste);   
     }
 
+     public void ordne()
+    {
+        Collections.sort(mannschaften, new Ordnepunkt());   
+    }        
     public void ordneNachPunkten()
     {
-        ergebnisse= new ArrayList<Team>();
-        ordne();
-        int i=4;
-        for(Team team:mannschaften)
-        {
-           for(int in :punkteliste)
-           {
-               if(team.gibPunkte()==in)
-               {
-                   ergebnisse.add(team);
-                  
-                }
-            }
+       int x = 0;
+       Iterator it = mannschaften.iterator();
+       
+       while(it.hasNext())
+       {
+           
         }
-      
     }
 
     public void gibplatzeins()
