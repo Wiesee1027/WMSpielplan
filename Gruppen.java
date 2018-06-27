@@ -36,6 +36,12 @@ public class Gruppen
            
         }
     }
+	
+	
+	
+	
+	
+
 
     public Team gibplatzeins()
     {
@@ -57,3 +63,4 @@ public class Gruppen
         mannschaften.add(team);
     }
 }
+
