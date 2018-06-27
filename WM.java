@@ -9,7 +9,7 @@ public class WM
 {
     // Instanzvariablen - ersetzen Sie das folgende Beispiel mit Ihren Variablen
     private ArrayList<Team>teams;
-    private ArrayList<Gruppen> gruppen;
+    private ArrayList<Gruppe> gruppen;
     private ArrayList<Spiel>achtelfinale;
     private ArrayList<Spiel>viertelfinale;
     private ArrayList<Spiel>Halbfinale;
@@ -22,7 +22,7 @@ public class WM
     public WM()
     {
         teams = new ArrayList<Team>();
-        gruppen = new ArrayList<Gruppen>();
+        gruppen = new ArrayList<Gruppe>();
     }
 
     public void achtelAuslosen()
@@ -42,10 +42,10 @@ public class WM
     public void gruppenErstellen()
     {
         int x = teams.size()/4;
-        gruppen.add(new Gruppen());
+        gruppen.add(new Gruppe());
         while(gruppen.size()!=x)
         {
-            gruppen.add(new Gruppen()) ; 
+            gruppen.add(new Gruppe()) ; 
         }
     }
 
@@ -58,7 +58,7 @@ public class WM
         while(!teams.isEmpty())
         {
 
-            Gruppen gruppe = gruppen.get(y);
+            Gruppe gruppe = gruppen.get(y);
             while(gruppe.gibSize()<4)
             {
                 int x = ran.nextInt(teams.size());
@@ -69,6 +69,23 @@ public class WM
         }
         
         
+    }
+    public void erstellegruppe(Gruppe gruppe)    
+    {
+        gruppen.add(gruppe);
+    }
+    
+    
+    public void gibgruppen()
+    {
+      int x =1;
+      for(Gruppe g:gruppen)
+      {
+         System.out.println("gruppe" +x); 
+         g.ordne();
+         g.g();
+         x++;
+        }
     }
 
 }

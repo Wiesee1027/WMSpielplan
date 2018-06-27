@@ -5,7 +5,7 @@ import java.util.*;
  * @author (Alex Wiese, Stepahn Strecker) 
  * @version (1.0 - 22.06.2018)
  */
-public class Gruppen
+public class Gruppe
 {
     // Instanzvariablen - ersetzen Sie das folgende Beispiel mit Ihren Variablen
     private ArrayList<Team> mannschaften;
@@ -16,31 +16,41 @@ public class Gruppen
     /**
      * Konstruktor für Objekte der Klasse Gruppen
      */
-    public Gruppen()
+    public Gruppe()
     {
         mannschaften = new ArrayList<Team>(); 
+        mannschaften.add(new Team("Korea",1));
+        mannschaften.add(new Team("Deutschland",4));
+        mannschaften.add(new Team("mexico",6));
+        mannschaften.add(new Team("schweden",3));
     }
     
     
        public void ordne()
     {
         Collections.sort(mannschaften, new Ordnepunkt());   
-    }        
-    public void ordneNachPunkten()
-    {
-       int x = 0;
-       Iterator it = mannschaften.iterator();
+    } 
+    
+    
+    // public void ordneNachPunkten()
+    // {
+       // int x = 0;
+       // Iterator<Team> it = mannschaften.iterator();
        
-       while(it.hasNext())
-       {
-           
-        }
-    }
-	
-	
-	
-	
-	
+       // while(it.hasNext())
+       // {
+         // Team t = it.next(); 
+         // if(t.gibPunkte()<x)
+         // {
+             // ergebnisse.add(t);
+             // x=t.gibPunkte();
+             // it.remove();
+         // }
+            
+        // }
+    // }    
+    
+    
 
 
     public Team gibplatzeins()
@@ -62,5 +72,13 @@ public class Gruppen
     {
         mannschaften.add(team);
     }
+    
+  public void g()
+  {
+      for(Team t:mannschaften)
+      {
+          System.out.println(t.gibName());
+    }
+}
 }
 
