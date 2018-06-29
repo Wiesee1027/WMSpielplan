@@ -10,21 +10,65 @@ public class Spiel
     // Instanzvariablen - ersetzen Sie das folgende Beispiel mit Ihren Variablen
     private Team heim;
     private Team aus;
-    
+    private int toreHeim;
+    private int toreAus;
+
     /**
      * Konstruktor für Objekte der Klasse Spiel
      */
-    public Spiel()
+    public Spiel(Team heim,Team aus,int th,int ta)
     {
-        
+        this.heim=heim;
+        this.aus=aus;
+        toreHeim=th;
+        toreAus=ta;
     }
 
-   public Team gibGewinner(int heimer, int auser)
-   {
-     if(heimer < auser)
-     {
-         return  heim;
-     }
-     return aus;  
+    public Team gibGewinner(int heimer, int auser)
+    {
+        if(heimer < auser)
+        {
+            return  heim;
+        }
+        return aus;  
     }
+    
+    public Team gibHeimTeam()
+    {
+     return heim;   
+    }
+    public Team gibGastTeam  ()
+    {
+     return aus;
+    }
+
+    public int gibPunkte(Team team)
+    {
+        if(team.equals(heim))
+        {
+            if(toreHeim>toreAus)
+            {
+                return 3;
+            }
+            if(toreHeim==toreAus)
+            {
+
+                return 1;
+            }
+        }
+        if(team.equals(aus))
+        {
+            if(toreAus>toreHeim)
+            {
+                return 3;
+            }
+            if(toreHeim==toreAus)
+            {
+
+                return 1;
+            }
+        }
+        return 0;
+    }
+
 }

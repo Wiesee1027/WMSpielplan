@@ -10,8 +10,7 @@ public class Gruppe
     // Instanzvariablen - ersetzen Sie das folgende Beispiel mit Ihren Variablen
     private ArrayList<Team> mannschaften;
     private String name;
-    private ArrayList<Team> ergebnisse;
-
+    private ArrayList<Spiel> gruppenSpiele;
 
     /**
      * Konstruktor für Objekte der Klasse Gruppen
@@ -19,39 +18,19 @@ public class Gruppe
     public Gruppe()
     {
         mannschaften = new ArrayList<Team>(); 
+        gruppenSpiele= new ArrayList<Spiel>();
         mannschaften.add(new Team("Korea",1));
         mannschaften.add(new Team("Deutschland",4));
         mannschaften.add(new Team("mexico",6));
         mannschaften.add(new Team("schweden",3));
     }
+
     
-    
-       public void ordne()
+
+    public void ordne()
     {
         Collections.sort(mannschaften, new Ordnepunkt());   
     } 
-    
-    
-    // public void ordneNachPunkten()
-    // {
-       // int x = 0;
-       // Iterator<Team> it = mannschaften.iterator();
-       
-       // while(it.hasNext())
-       // {
-         // Team t = it.next(); 
-         // if(t.gibPunkte()<x)
-         // {
-             // ergebnisse.add(t);
-             // x=t.gibPunkte();
-             // it.remove();
-         // }
-            
-        // }
-    // }    
-    
-    
-
 
     public Team gibplatzeins()
     {
@@ -72,13 +51,33 @@ public class Gruppe
     {
         mannschaften.add(team);
     }
-    
-  public void g()
-  {
-      for(Team t:mannschaften)
-      {
-          System.out.println(t.gibName());
+
+    public void g()
+    {
+        for(Team t:mannschaften)
+        { 
+            System.out.println(t.gibName() + "punkte:"+ gibGesamtPunkte(t));
+        }
     }
-}
+
+    public void spielhinzu(Spiel spiel)
+    {
+        gruppenSpiele.add(spiel);
+    }
+
+    public int gibGesamtPunkte(Team team)
+    {
+        int punkte=0;
+
+        for(Spiel spiel:gruppenSpiele)
+        {
+            if(spiel.gibHeimTeam().equals(team) || spiel.gibGastTeam().equals(team))
+            {
+                punkte = punkte + spiel.gibPunkte(team);
+
+            }
+        }
+        return punkte;
+    }
 }
 

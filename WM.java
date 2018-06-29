@@ -84,6 +84,7 @@ public class WM
          System.out.println("gruppe" +x); 
          g.ordne();
          g.g();
+         
          x++;
         }
     }
