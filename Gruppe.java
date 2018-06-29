@@ -86,5 +86,18 @@ public class Gruppe
         }
         return punkte;
     }
+    
+    
+    public void ordnen()
+    {
+        for(Team team:mannschaften)
+        {
+         if(gibGesamtPunkte(team)<gibGesamtPunkte(mannschaften.get(mannschaften.indexOf(team)+1)))
+         {
+             
+            }
+         
+        }
+    }
 }
 
