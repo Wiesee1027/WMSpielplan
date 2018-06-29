@@ -25,7 +25,14 @@ public class Gruppe
         mannschaften.add(new Team("schweden",3));
     }
 
-    
+    /**
+     * mit dieser methode sollst du spiele erstellen jedes team gegen jeden die spiele sollen random ausgelost werden
+     */
+    public void spieleErstellen()
+    {
+
+    }
+
 
     public void ordne()
     {

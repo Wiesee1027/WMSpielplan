@@ -70,6 +70,8 @@ public class WM
         
         
     }
+    
+    
     public void erstellegruppe(Gruppe gruppe)    
     {
         gruppen.add(gruppe);
