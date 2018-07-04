@@ -27,33 +27,17 @@ public class Gruppe
     /**
      * mit dieser methode sollst du spiele erstellen jedes team gegen jeden die spiele sollen random ausgelost werden
      */
-    public void spieleErstellen()
+    public ArrayList<Spiel> spieleErstellen()
     {
 
         gruppenSpiele=new ArrayList<Spiel>();
-        Random random = new Random();
-        int anzahlspiele=mannschaften.size()*2;
-        while(gruppenSpiele.size()<anzahlspiele)
-        {
-            ArrayList<Team>m=new ArrayList<Team>(mannschaften);
-            while(!m.isEmpty())
-            {
-                Team spieler2 = null;
-                int zahl = random.nextInt(m.size());
-                Team  spieler1 = m.get(zahl);  
-                m.remove(zahl);
-                zahl = random.nextInt(m.size());
-                spieler2 = m.get(zahl);  
-                m.remove(zahl);
-                for(Spiel spiel:gruppenSpiele)
-                {
-                    if(spiel.gibHeimTeam()!=spieler1 && spiel.gibGastTeam()!=spieler2 && spiel.gibGastTeam()!= spieler1 && spiel.gibHeimTeam() != spieler2)
-                    {
-                        gruppenSpiele.add(new Spiel(spieler1, spieler2));
-                    } 
-                }
-            }
-        }
+        gruppenSpiele.add(new Spiel(mannschaften.get(1),mannschaften.get(4)));
+        gruppenSpiele.add(new Spiel(mannschaften.get(2),mannschaften.get(3)));
+        gruppenSpiele.add(new Spiel(mannschaften.get(4),mannschaften.get(2)));
+        gruppenSpiele.add(new Spiel(mannschaften.get(3),mannschaften.get(1)));
+        gruppenSpiele.add(new Spiel(mannschaften.get(3),mannschaften.get(4)));
+        gruppenSpiele.add(new Spiel(mannschaften.get(2),mannschaften.get(1)));
+        return gruppenSpiele;
     }
     
     public int gibAnzahlSpiele()
