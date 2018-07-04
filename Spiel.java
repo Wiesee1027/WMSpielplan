@@ -1,4 +1,4 @@
-
+import java.util.Random;
 /**
  * Beschreiben Sie hier die Klasse Spiel.
  * 
@@ -68,6 +68,14 @@ public class Spiel
             }
         }
         return 0;
+    }
+    public void ergebniss()
+    {
+        Random ran = new Random();
+        
+        toreHeim=ran.nextInt(5);
+        toreAus=ran.nextInt(5);
+        
     }
 
 }

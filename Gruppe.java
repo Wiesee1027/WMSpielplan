@@ -18,36 +18,38 @@ public class Gruppe
     public Gruppe()
     {
         mannschaften = new ArrayList<Team>(); 
-        mannschaften.add(new Team("Korea",1));
-        mannschaften.add(new Team("Deutschland",4));
-        mannschaften.add(new Team("mexico",6));
-        mannschaften.add(new Team("schweden",3));
+        gruppenSpiele=new ArrayList<Spiel>();
+        mannschaften.add(new Team("Korea"));
+        mannschaften.add(new Team("Deutschland"));
+        mannschaften.add(new Team("mexico"));
+        mannschaften.add(new Team("schweden"));
     }
 
     /**
      * mit dieser methode sollst du spiele erstellen jedes team gegen jeden die spiele sollen random ausgelost werden
      */
-    public ArrayList<Spiel> spieleErstellen()
-    {
-
-        gruppenSpiele=new ArrayList<Spiel>();
-        gruppenSpiele.add(new Spiel(mannschaften.get(1),mannschaften.get(4)));
-        gruppenSpiele.add(new Spiel(mannschaften.get(2),mannschaften.get(3)));
-        gruppenSpiele.add(new Spiel(mannschaften.get(4),mannschaften.get(2)));
+    public void spieleErstellen()
+    {        
+        gruppenSpiele.add(new Spiel(mannschaften.get(0),mannschaften.get(3)));
+        gruppenSpiele.add(new Spiel(mannschaften.get(1),mannschaften.get(2)));
         gruppenSpiele.add(new Spiel(mannschaften.get(3),mannschaften.get(1)));
-        gruppenSpiele.add(new Spiel(mannschaften.get(3),mannschaften.get(4)));
-        gruppenSpiele.add(new Spiel(mannschaften.get(2),mannschaften.get(1)));
-        return gruppenSpiele;
+        gruppenSpiele.add(new Spiel(mannschaften.get(2),mannschaften.get(0)));
+        gruppenSpiele.add(new Spiel(mannschaften.get(2),mannschaften.get(3)));
+        gruppenSpiele.add(new Spiel(mannschaften.get(1),mannschaften.get(0)));
     }
-    
+
     public int gibAnzahlSpiele()
     {
+       
         return gruppenSpiele.size();
     }
-	
 
     public void ordne()
     {
+         for(Team t:mannschaften)
+        {
+            t.setzepunkte(gibGesamtPunkte(t));
+        }
         Collections.sort(mannschaften, new Ordnepunkt());   
     } 
 
@@ -79,36 +81,40 @@ public class Gruppe
         }
     }
 
-    public void spielhinzu(Spiel spiel)
+    public void ergebnisse()
     {
-        gruppenSpiele.add(spiel);
+        for(Spiel spiel:gruppenSpiele)
+        {
+            spiel.ergebniss();   
+        }
     }
 
     public int gibGesamtPunkte(Team team)
     {
         int punkte=0;
-
-        for(Spiel spiel:gruppenSpiele)
-        {
-            if(spiel.gibHeimTeam().equals(team) || spiel.gibGastTeam().equals(team))
+       
+            for(Spiel spiel:gruppenSpiele)
             {
-                punkte = punkte + spiel.gibPunkte(team);
+                if(spiel.gibHeimTeam().equals(team) || spiel.gibGastTeam().equals(team))
+                {
+                    punkte = punkte + spiel.gibPunkte(team);
 
+                }
             }
-        }
-        return punkte;
+            return punkte;
+        
     }
 
-    public void ordnen()
-    {
-        for(Team team:mannschaften)
-        {
-            if(gibGesamtPunkte(team)<gibGesamtPunkte(mannschaften.get(mannschaften.indexOf(team)+1)))
-            {
+    // public void ordnen()
+    // {
+        // for(Team team:mannschaften)
+        // {
+            // if(gibGesamtPunkte(team)<gibGesamtPunkte(mannschaften.get(mannschaften.indexOf(team)+1)))
+            // {
 
-            }
+            // }
 
-        }
-    }
+        // }
+    // }
 }
 
