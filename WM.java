@@ -84,6 +84,8 @@ public class WM
       for(Gruppe g:gruppen)
       {
          System.out.println("gruppe" +x); 
+         g.spieleErstellen();
+         g.ergebnisse();
          g.ordne();
          g.g();
          

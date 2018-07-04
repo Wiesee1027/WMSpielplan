@@ -40,17 +40,27 @@ public class Gruppe
 
     public int gibAnzahlSpiele()
     {
-       
+
         return gruppenSpiele.size();
     }
 
     public void ordne()
     {
-         for(Team t:mannschaften)
+        int x = 3;
+        ArrayList<Team>tt=new ArrayList<Team>();
+        for(Team t:mannschaften)
         {
             t.setzepunkte(gibGesamtPunkte(t));
         }
         Collections.sort(mannschaften, new Ordnepunkt());   
+        while(tt.size()!=4)
+        {
+            tt.add(mannschaften.get(x));
+            mannschaften.remove(x);
+            x--;
+        }
+        mannschaften=new ArrayList<Team>(tt);
+
     } 
 
     public Team gibplatzeins()
@@ -92,29 +102,29 @@ public class Gruppe
     public int gibGesamtPunkte(Team team)
     {
         int punkte=0;
-       
-            for(Spiel spiel:gruppenSpiele)
-            {
-                if(spiel.gibHeimTeam().equals(team) || spiel.gibGastTeam().equals(team))
-                {
-                    punkte = punkte + spiel.gibPunkte(team);
 
-                }
+        for(Spiel spiel:gruppenSpiele)
+        {
+            if(spiel.gibHeimTeam().equals(team) || spiel.gibGastTeam().equals(team))
+            {
+                punkte = punkte + spiel.gibPunkte(team);
+
             }
-            return punkte;
-        
+        }
+        return punkte;
+
     }
 
     // public void ordnen()
     // {
-        // for(Team team:mannschaften)
-        // {
-            // if(gibGesamtPunkte(team)<gibGesamtPunkte(mannschaften.get(mannschaften.indexOf(team)+1)))
-            // {
+    // for(Team team:mannschaften)
+    // {
+    // if(gibGesamtPunkte(team)<gibGesamtPunkte(mannschaften.get(mannschaften.indexOf(team)+1)))
+    // {
 
-            // }
+    // }
 
-        // }
+    // }
     // }
 }
 
