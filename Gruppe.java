@@ -29,19 +29,19 @@ public class Gruppe
      */
     public void spieleErstellen()
     {
-       
+       ArrayList<Team>m=new ArrayList<Team>(mannschaften);
         gruppenSpiele=new ArrayList<Spiel>();
         Random random = new Random();
 
-        while(!mannschaften.isEmpty())
+        while(!m.isEmpty())
         {
             Team spieler2 = null;
-            int zahl = random.nextInt(mannschaften.size());
-            Team  spieler1 = mannschaften.get(zahl);  
-            mannschaften.remove(zahl);
-            zahl = random.nextInt(mannschaften.size());
-            spieler2 = mannschaften.get(zahl);  
-            mannschaften.remove(zahl);
+            int zahl = random.nextInt(m.size());
+            Team  spieler1 = m.get(zahl);  
+            m.remove(zahl);
+            zahl = random.nextInt(m.size());
+            spieler2 = m.get(zahl);  
+            m.remove(zahl);
  
 
 
