@@ -1,5 +1,9 @@
 
 
+
+
+
+
 import static org.junit.Assert.*;
 import org.junit.After;
 import org.junit.Before;
@@ -8,12 +12,17 @@ import org.junit.Test;
 /**
  * Die Test-Klasse GruppeTest.
  *
- * @author  (Ihr Name)
+ * @author  (Stephan,Alex)
  * @version (eine Versionsnummer oder ein Datum)
  */
 public class GruppeTest
 {
     private Gruppe gruppe1;
+
+    
+
+   
+    
 
     /**
      * Konstruktor fuer die Test-Klasse GruppeTest
@@ -30,7 +39,6 @@ public class GruppeTest
     @Before
     public void setUp()
     {
-        
         gruppe1 = new Gruppe();
     }
 
@@ -44,6 +52,25 @@ public class GruppeTest
     {
     }
 
-    
-}
 
+
+    @Test
+    public void testeErster()
+    {
+        assertEquals(4, gruppe1.gibSize());
+        gruppe1.ordne();
+        Team Erster = gruppe1.gibplatzeins();
+        assertEquals(6, Erster.gibPunkte());
+        assertEquals("mexico", Erster.gibName());
+    }
+
+    @Test
+    public void testeZweiter()
+    {
+        assertEquals(4, gruppe1.gibSize());
+        gruppe1.ordne();
+        Team Zweiter = gruppe1.gibtplatz2();
+        assertEquals("Deutschland", Zweiter.gibName());
+        assertEquals(4, Zweiter.gibPunkte());
+    }
+}
