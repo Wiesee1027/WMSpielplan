@@ -83,11 +83,13 @@ public class WM
       int x =1;
       for(Gruppe g:gruppen)
       {
-         System.out.println("gruppe" +x); 
+         System.out.println("Gruppe"  +x); 
+         System.out.println("--------------");
          g.spieleErstellen();
          g.ergebnisse();
          g.ordne();
          g.g();
+         System.out.println("--------------");
          
          x++;
         }

@@ -87,7 +87,7 @@ public class Gruppe
     {
         for(Team t:mannschaften)
         { 
-            System.out.println(t.gibName() + "punkte:"+ gibGesamtPunkte(t));
+            System.out.println(t.gibName() +  " punkte:" + gibGesamtPunkte(t));
         }
     }
 
