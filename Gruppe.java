@@ -18,7 +18,6 @@ public class Gruppe
     public Gruppe()
     {
         mannschaften = new ArrayList<Team>(); 
-        gruppenSpiele= new ArrayList<Spiel>();
         mannschaften.add(new Team("Korea",1));
         mannschaften.add(new Team("Deutschland",4));
         mannschaften.add(new Team("mexico",6));
@@ -30,7 +29,24 @@ public class Gruppe
      */
     public void spieleErstellen()
     {
+       
+        gruppenSpiele=new ArrayList<Spiel>();
+        Random random = new Random();
 
+        while(!mannschaften.isEmpty())
+        {
+            Team spieler2 = null;
+            int zahl = random.nextInt(mannschaften.size());
+            Team  spieler1 = mannschaften.get(zahl);  
+            mannschaften.remove(zahl);
+            zahl = random.nextInt(mannschaften.size());
+            spieler2 = mannschaften.get(zahl);  
+            mannschaften.remove(zahl);
+ 
+
+
+            gruppenSpiele.add(new Spiel(spieler1, spieler2));
+        } 
     }
 
 
@@ -95,7 +111,7 @@ public class Gruppe
          if(gibGesamtPunkte(team)<gibGesamtPunkte(mannschaften.get(mannschaften.indexOf(team)+1)))
          {
              
-            }
+         }
          
         }
     }

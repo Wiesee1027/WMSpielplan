@@ -16,12 +16,11 @@ public class Spiel
     /**
      * Konstruktor für Objekte der Klasse Spiel
      */
-    public Spiel(Team heim,Team aus,int th,int ta)
+    public Spiel(Team heim,Team aus)
     {
         this.heim=heim;
         this.aus=aus;
-        toreHeim=th;
-        toreAus=ta;
+
     }
 
     public Team gibGewinner(int heimer, int auser)
