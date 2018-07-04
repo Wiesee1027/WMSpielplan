@@ -55,7 +55,12 @@ public class Gruppe
             }
         }
     }
-    //hallo
+    
+    public int gibAnzahlSpiele()
+    {
+        return gruppenSpiele.size();
+    }
+	
 
     public void ordne()
     {
