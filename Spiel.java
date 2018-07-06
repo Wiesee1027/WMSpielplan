@@ -77,5 +77,19 @@ public class Spiel
         toreAus=ran.nextInt(5);
         
     }
+    
+    public int tore(Team team)
+    {
+      if(team.equals(heim))
+        {
+           return toreHeim; 
+        }
+        if(team.equals(aus))
+        {
+            return toreAus;
+        }  
+        return 0;
+    }
+    
 
 }

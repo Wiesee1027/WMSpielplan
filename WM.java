@@ -25,9 +25,7 @@ public class WM
         gruppen = new ArrayList<Gruppe>();
     }
 
-    public void achtelAuslosen()
-    {
-    }
+   
 
     
 
@@ -60,10 +58,7 @@ public class WM
     }
     
     
-    public void erstellegruppe(Gruppe gruppe)    
-    {
-        gruppen.add(gruppe);
-    }
+    
     
     /**
      * gibt eine ansicht der gruppen und deren ergebnisse auf die konsole aus 

@@ -59,5 +59,7 @@ public class Team
     {
      this.punkte=punkte;   
     }
+    
+   
 
 }
