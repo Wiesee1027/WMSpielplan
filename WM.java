@@ -29,26 +29,14 @@ public class WM
     {
     }
 
-    // public void probe()
-    // {
-        // int x = 32;
-        // while(x!=0)
-        // {
-            // teams.add(new Team());
-            // x--;
-        // }
-    // }
+    
 
-    public void gruppenErstellen()
-    {
-        int x = teams.size()/4;
-        gruppen.add(new Gruppe());
-        while(gruppen.size()!=x)
-        {
-            gruppen.add(new Gruppe()) ; 
-        }
-    }
-
+    
+    
+    
+    /**
+     * Lost die gruppen zufällig zusammen
+     */
     public void gruppenauslosen()
     {
         gruppenErstellen();
@@ -77,7 +65,9 @@ public class WM
         gruppen.add(gruppe);
     }
     
-    
+    /**
+     * gibt eine ansicht der gruppen und deren ergebnisse auf die konsole aus 
+     */
     public void gibgruppen()
     {
       int x =1;
@@ -92,6 +82,21 @@ public class WM
          System.out.println("--------------");
          
          x++;
+        }
+    }
+    
+    
+    
+    /**
+     * erstellt gruppen mit einer grösse von 4
+     */
+    public void gruppenErstellen()
+    {
+        int x = teams.size()/4;
+        gruppen.add(new Gruppe());
+        while(gruppen.size()!=x)
+        {
+            gruppen.add(new Gruppe()) ; 
         }
     }
 
