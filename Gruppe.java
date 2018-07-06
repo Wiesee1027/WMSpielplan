@@ -26,7 +26,7 @@ public class Gruppe
     }
 
     /**
-     * mit dieser methode sollst du spiele erstellen jedes team gegen jeden die spiele sollen random ausgelost werden
+     * Diese Methode erstellt die spiele nach einen bestimmten schema
      */
     public void spieleErstellen()
     {        
@@ -38,16 +38,23 @@ public class Gruppe
         gruppenSpiele.add(new Spiel(mannschaften.get(1),mannschaften.get(0)));
     }
 
-    public int gibAnzahlSpiele()
+    /**
+     * diese Methode wird hier erstmal nicht benötigt da wir die teams schon im Konstruktor hinzufügen
+     */
+    public void hinzu(Team team)
     {
-
-        return gruppenSpiele.size();
+        mannschaften.add(team);
     }
 
+    /**
+     * Diese Methode verwendet das interface "OrdnePunkte" und ordnet die Mannschaften nach den punkten welsche durch berechnen der 
+     * ergebnisse werden 
+     */
     public void ordne()
     {
         int x = 3;
         ArrayList<Team>tt=new ArrayList<Team>();
+        ergebnisse();
         for(Team t:mannschaften)
         {
             t.setzepunkte(gibGesamtPunkte(t));
@@ -61,29 +68,12 @@ public class Gruppe
         }
         mannschaften=new ArrayList<Team>(tt);
 
-    } 
-
-    public Team gibplatzeins()
-    {
-        return mannschaften.get(3);
     }
 
-    public Team gibtplatz2()
-    {
-        return mannschaften.get(2);
-    }
-
-    public int gibSize()
-    {
-        return mannschaften.size();   
-    }
-
-    public void hinzu(Team team)
-    {
-        mannschaften.add(team);
-    }
-
-    public void g()
+    /**
+     * diese methode gibt infos wie name und den punktestand auf der konsole aus
+     */
+    public void gebeInfoAus()
     {
         for(Team t:mannschaften)
         { 
@@ -91,6 +81,30 @@ public class Gruppe
         }
     }
 
+    /**
+     * liefert platz eins zurück
+     */    
+    public Team gibplatzeins()
+    {
+        return mannschaften.get(0);
+    }
+
+    /**
+     * liefert platz zwei zurück
+     */
+    public Team gibtplatz2()
+    {
+        return mannschaften.get(1);
+    }
+
+    public int gibSize()
+    {
+        return mannschaften.size();   
+    }
+
+    /**
+     * führt für alle spiele die methode ergebniss aus welsche das ergebniss random aus gibt
+     */
     public void ergebnisse()
     {
         for(Spiel spiel:gruppenSpiele)
@@ -99,6 +113,9 @@ public class Gruppe
         }
     }
 
+    /**
+     * Diese Methode berechnet die punkte die in den spielen erzielt wurden
+     */
     public int gibGesamtPunkte(Team team)
     {
         int punkte=0;
@@ -115,16 +132,10 @@ public class Gruppe
 
     }
 
-    // public void ordnen()
-    // {
-    // for(Team team:mannschaften)
-    // {
-    // if(gibGesamtPunkte(team)<gibGesamtPunkte(mannschaften.get(mannschaften.indexOf(team)+1)))
-    // {
+    public int gibAnzahlSpiele()
+    {
 
-    // }
-
-    // }
-    // }
+        return gruppenSpiele.size();
+    }
 }
 

@@ -88,7 +88,7 @@ public class WM
          g.spieleErstellen();
          g.ergebnisse();
          g.ordne();
-         g.g();
+         g.gebeInfoAus();
          System.out.println("--------------");
          
          x++;
