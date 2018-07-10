@@ -44,10 +44,8 @@ public class Gruppe
     public void hinzu(Team team)
     {
         mannschaften.add(team);
-
     }
 
-   
     /**
      * Diese Methode verwendet das interface "OrdnePunkte" und ordnet die Mannschaften nach den punkten welsche durch berechnen der 
      * ergebnisse werden 
@@ -83,6 +81,21 @@ public class Gruppe
                     mannschaften.add(index1,team);
                     mannschaften.add(index2,t);
 
+                }
+                else if(zaehleTore(team)==zaehleTore(mannschaften.get (mannschaften.indexOf(team)-1)))
+                {
+                    for(Spiel spiel:gruppenSpiele)
+                    {
+                        if(spiel.tore(team)>spiel.tore(mannschaften.get (mannschaften.indexOf(team)-1)))
+                        {
+                            int index1 = mannschaften.indexOf(team)-1;
+                            int index2 = mannschaften.indexOf(team);
+                            mannschaften.remove(team);
+                            Team t = mannschaften.get (mannschaften.indexOf(team)-1);
+                            mannschaften.add(index1,team);
+                            mannschaften.add(index2,t);
+                        }
+                    }
                 }
                 punkte=team.gibPunkte();
             }
